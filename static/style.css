@@ -1,0 +1,82 @@
+/* Advanced modern styling for KnowledgeScout */
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#7c3aed;
+  --muted:#9aa4b2;
+  --glass: rgba(255,255,255,0.03);
+  --glass-2: rgba(255,255,255,0.02);
+  --radius:14px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, rgba(11,18,32,0.85) 0%, rgba(7,16,38,0.85) 100%), url('/static/geometric-science-education-background-vector-gradient-blue-digital-remix_53876-125993.jpg');
+  background-size: cover;
+  background-position: center center;
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+}
+
+/* top bar */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 28px;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.topbar .brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight:700;
+  letter-spacing:0.6px;
+  font-size:20px;
+}
+.topbar .brand img{height:36px; width:36px; border-radius:8px}
+.topbar .nav-right{display:flex; align-items:center; gap:12px}
+.btn{display:inline-block; padding:10px 14px; border-radius:10px; background:linear-gradient(90deg,var(--accent),#5b21b6); color:white; border:none; cursor:pointer; text-decoration:none}
+.btn.small{padding:6px 10px; font-size:13px}
+.user{opacity:0.9; font-size:14px; color:var(--muted)}
+
+/* main layout */
+.main{padding:28px; max-width:1100px; margin:20px auto}
+.card{background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:20px; border-radius:var(--radius); box-shadow:0 8px 30px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03)}
+
+/* two column layout */
+.layout{display:grid; grid-template-columns:1fr 320px; gap:20px; align-items:start}
+.left input[type="file"]{padding:8px; background:var(--glass); border-radius:10px; width:100%}
+.left input, .left textarea{width:100%; padding:12px 14px; margin-top:10px; border-radius:10px; border:none; background:var(--glass-2); color:inherit}
+.left .muted{color:var(--muted); font-size:13px; margin-top:6px}
+.answer-box{margin-top:12px; padding:12px; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); min-height:80px; color:#bfe3c7}
+
+/* right column */
+.right h4{margin-top:0}
+.small{font-size:13px}
+.muted{color:var(--muted)}
+
+/* auth pages */
+.auth-page{display:flex; align-items:center; justify-content:center; min-height:100vh}
+.auth-card{width:360px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:28px; border-radius:18px; box-shadow:0 12px 40px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03); text-align:center}
+.auth-card h2{margin:0 0 12px 0}
+.auth-card input{width:100%; padding:12px; margin:8px 0; border-radius:10px; border:none; background:var(--glass-2); color:inherit}
+.auth-card .alt{margin-top:10px; color:var(--muted)}
+
+/* flash messages */
+.flash-area{margin-bottom:12px}
+.flash{padding:8px 10px; border-radius:8px; margin:6px 0; text-align:left}
+.flash.success{background:rgba(34,197,94,0.12); color:#bbf7d0; border:1px solid rgba(34,197,94,0.15)}
+.flash.danger{background:rgba(239,68,68,0.08); color:#fecaca; border:1px solid rgba(239,68,68,0.12)}
+.flash.info{background:rgba(59,130,246,0.08); color:#bfdbfe; border:1px solid rgba(59,130,246,0.12)}
+
+/* responsive */
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr; padding:10px}
+  .topbar{padding:12px}
+  .main{padding:12px}
+}
